@@ -1,0 +1,47 @@
+//Running individual/single group
+<suite name="MyTestSuite">
+
+    <test name="MyTest">
+
+        <groups>
+
+	    <run>
+
+		<include name="Car" />
+
+	    </run>
+
+	</groups>
+
+	<classes>
+
+	    <class name="com.cg.lesson06.GroupingDemo" />
+
+	</classes>
+
+    </test>
+
+</suite>
+
+//Running all groups together
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="MyTestSuite" parallel="none">
+  <test name="MyTest">
+  	<groups>
+  		
+  		<define name="AllGroup">
+  			<include name="Car"/>
+  			<include name="Scooter"/>
+  		</define>
+  		
+  		<run>
+  			<include name="AllGroup"/>
+  		</run>
+  	</groups>
+    <classes>
+      <class name="com.cg.lesson06.GroupingDemo"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
